@@ -19,10 +19,9 @@ The aim is to complete the base project to the standard the course required, and
 ## Navigation
 
 Main
-    - 100 Days
-        - Day #
-            - Project
-                - ReadME / Files
-            - Overengineered Project
-                - ReadME / Files / 
-    - .gitignore
+- 100 Days
+  - Day #
+    - Project
+      - ReadME / Files
+    - Overengineered Project
+      - ReadME / Files / 
