@@ -8,7 +8,9 @@ Originally I was going to use this repository as one element of my portfolio, to
 
 The new goal of this repository is to creat a before / after image of each days project. Each course day folder will contain:<br>
     ```
-    -> A Project folder<br>
+    -> A Project folder
+    ```<br>
+    ```
     -> An overengineered folder
     ```
     
