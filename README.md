@@ -14,7 +14,7 @@ The new goal of this repository is to creat a before / after image of each days 
     -> An overengineered folder
     ```
     
-The aim is to complete the base project to the standard the course required, and then have a seperate folder for each day, to showcase how close to a working APP i can bring each project, often over engineered using what I learn in later days.
+The aim is to complete the base project to the standard the course required, and then have a seperate folder for each day, to showcase how close to a working application i can bring each project, using only python and it's built in tools.
 
 ## Navigation
 
