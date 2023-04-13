@@ -21,7 +21,7 @@ The aim is to complete the base project to the standard the course required, and
 Main
 - 100 Days
   - Day #
-    - Project
+    - Course Project
       - ReadME / Files
     - Overengineered Project
       - ReadME / Files 
