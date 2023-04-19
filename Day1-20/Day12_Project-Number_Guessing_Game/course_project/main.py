@@ -87,34 +87,56 @@ while alive == True:
     #if we have more turns
     if turns > 0:
         #guess the number
-        guess = int(input("What do you think the number is? (between 1 and 100): "))
-        #Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer. 
-        if guess > computer_number:
-            print("Too High")
-            # Track the number of turns remaining.
+        print(logo)
+        print(f"{turns} Turns Remaining")
+        guess = (input("What do you think the number is? (between 1 and 100): "))
+        #this is an if statement to check and see if the guess was actually a number if it was not it will fail the expression and tell them off
+        if guess.isnumeric():
+            print("Sorry mate, this is a number guessing game, not letter, try again")
             turns -=1
-            #add the number to the guesses
-            numbers_guessed.append(guess)
-            #print remaining turns and currently guessed
-            print(f"You have {turns} turns remaining")
-            print(f"Numbers currently guessed: {numbers_guessed}")
-        elif guess < computer_number:
-            print("Too Low")
-            turns -=1
-            numbers_guessed.append(guess)
-            print(f"You have {turns} turns remaining")
-            print(f"Numbers currently guessed: {numbers_guessed}")
-        # If they got the answer correct, show the actual answer to the player.
-        else:
-          print(f"That's it chief the number was in fact {computer_number}")
-          alive = False
-          reset()
+            time.sleep(3)
+            clear()
 
-# If they run out of turns, provide feedback to the player. 
-if turns == 0:
-    print("You have run out of turns, thanks for playing!")
-    alive = False
-    reset()
+        else:
+            guess = int(guess)
+            print(f"your Guess: {guess}")
+            #Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer. 
+            if guess > 100 or guess < 1:
+                print("Sorry mate, this entry is not valid, you lose a life for being cheeky, go again")
+                turns -=1
+                time.sleep(3)
+                clear()
+            elif guess > computer_number:
+                print("Too High")
+                # Track the number of turns remaining.
+                turns -=1
+                #add the number to the guesses
+                numbers_guessed.append(guess)
+                #print remaining turns and currently guessed
+                print(f"You have {turns} turns remaining")
+                print(f"Numbers currently guessed: {numbers_guessed}")
+                time.sleep(3)
+                clear()
+            elif guess < computer_number:
+                print("Too Low")
+                turns -=1
+                numbers_guessed.append(guess)
+                print(f"You have {turns} turns remaining")
+                print(f"Numbers currently guessed: {numbers_guessed}")
+                time.sleep(3)
+                clear()
+            # If they got the answer correct, show the actual answer to the player.
+            else:
+                print(f"That's it chief the number was in fact {computer_number}")
+                alive = False
+                time.sleep(3)
+                reset()
+
+    # If they run out of turns, provide feedback to the player. 
+    if turns == 0:
+        print("You have run out of turns, thanks for playing!")
+        alive = False
+        reset()
 
 
 

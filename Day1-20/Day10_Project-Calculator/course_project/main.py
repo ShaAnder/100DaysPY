@@ -31,10 +31,12 @@ def calculation(n1, n2):
     return n1 + n2
   elif user_choice == '-':
     return n1 - n2
-  if user_choice == '*':
+  elif user_choice == '*':
     return n1 * n2
-  if user_choice == '/':
+  elif user_choice == '/':
     return n1 / n2
+  else:
+    return ("Sorry invalid calculation detected calculation will not work as intended.")
 
 # define our clear function
 def clear():

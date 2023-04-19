@@ -108,15 +108,13 @@ def main():
       print(f"Player has drawn another card. Current cards: {user_hand}, Current score: {user_score}")
       #if score is over 21 (and this also accounts for aces)
       if user_score > 21: 
-        #player is bust house wins / kill loop
-        print("Player Bust, House Wins!")
         Another = False
     #if more = n kill loop
     if more == 'n':
       Another = False
   #we want the cpu to reveal at 16 or more score (as is often the rule in blackjack (dealer draws till 16 or higher))
   #if score is more than 16 reveal
-  if computer_score > 16: 
+  if computer_score >= 16: 
     print(f"Dealers Cards: {computer_hand} Dealers Score: {computer_score}")
   #else
   else:
@@ -127,22 +125,42 @@ def main():
       computer_score = calculate_score(computer_hand)
       #if computer score is over 21, computer bust, user wins
       if computer_score > 21:
-        print(f"Dealers Cards: {computer_hand} Dealers Score: {computer_score}")
-        print("House Bust, Player Wins!")
       #kill loop
-      Another = False
+        Another = False
   #finally win conditions
-  if user_score == 21 and computer_score == 21:
+  clear()
+  print(logo)
+  if computer_score > 21:
+    print(f"Players cards: {user_hand}, Players score: {user_score}")
+    print(f"Dealers Cards: {computer_hand} Dealers Score: {computer_score}")
+    print("House Bust, Player Wins!")
+  if user_score > 21:
+    print(f"Players cards: {user_hand}, Players score: {user_score}")
+    print(f"Dealers Cards: {computer_hand} Dealers Score: {computer_score}")
+    print("Player Bust, House Wins")
+  elif user_score == 21 and computer_score == 21:
+    print(f"Players cards: {user_hand}, Players score: {user_score}")
+    print(f"Dealers Cards: {computer_hand} Dealers Score: {computer_score}")
     print("A double blackjack, however house always wins...")
   elif user_score == 21:
-    print("Blackjack! Player wins")
+    print(f"Players cards: {user_hand}, Players score: {user_score}")
+    print(f"Dealers Cards: {computer_hand} Dealers Score: {computer_score}")
+    print("Blackjack! Player Wins")
   elif computer_score == 21:
-    print("Blackjack! House wins")
-  elif user_score > computer_score and user_score <= 21:
-    print("Player wins")
-  elif computer_score > user_score and computer_score <= 21:
+    print(f"Players cards: {user_hand}, Players score: {user_score}")
+    print(f"Dealers Cards: {computer_hand} Dealers Score: {computer_score}")
+    print("Blackjack! House Wins")
+  elif user_score > computer_score and user_score < 21:
+    print(f"Players cards: {user_hand}, Players score: {user_score}")
+    print(f"Dealers Cards: {computer_hand} Dealers Score: {computer_score}")
+    print("Player Wins")
+  elif computer_score > user_score and computer_score < 21:
+    print(f"Players cards: {user_hand}, Players score: {user_score}")
+    print(f"Dealers Cards: {computer_hand} Dealers Score: {computer_score}")
     print("House Wins")
   else:
+    print(f"Players cards: {user_hand}, Players score: {user_score}")
+    print(f"Dealers Cards: {computer_hand} Dealers Score: {computer_score}")
     print("House Wins")
 
 ### --- EXECUTION --- ###

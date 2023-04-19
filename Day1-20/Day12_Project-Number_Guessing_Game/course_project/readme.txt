@@ -23,6 +23,7 @@ Flow:
 		-> if ez -> 10 lives play game
 		-> if hard -> 5 lives play gmae
 			-> guess number
+				-> if number not a number, warn user for bad input go again else convert number into an integer
 				-> if too high -> remove life, return too high -> add number to guessed / print guesses & try again
 				-> if too low, same as above just return too low
 					-> if win -> victory statement

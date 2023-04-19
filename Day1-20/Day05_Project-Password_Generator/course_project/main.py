@@ -49,4 +49,4 @@ print(f"You wanted {nr_letters} letters, {nr_symbols} symbols and {nr_numbers} n
 #amount of letters / numbers / symbols just randomized.
 random_password = ''.join(random.sample(password, len(password)))
 
-print(f"Here is the password. But randomized: {random_password}")
+print(f"Here is the password. Randomized!: {random_password}")

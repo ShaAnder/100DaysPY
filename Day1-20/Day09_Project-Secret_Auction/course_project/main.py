@@ -54,22 +54,22 @@ def winning_bid(bidders):
 ### --- EXECUTABLES --- ###
 
 #now for while loop as we want more than one participant
-while not finished:
+while finished == False:
   #if more bidders:
   print(logo)
   print("Welcome to the secret auction.")
   name = input("What is your name?: ")
   amount = input("How much would you like to bid?: ")
   bids(name, amount)
-  again = input("Are there anymore bidders? Type Yes or No: ").lower()
+  again = input("Are there anymore bidders? Type y or n: ").lower()
   #endloop:
-  if again == 'no':
+  if again == 'n':
     #kill it
     finished = True
     #announce winner
     winning_bid(bidders)
   #continueloop:
-  elif again == 'yes':
+  elif again == 'y':
     clear()
 
 
