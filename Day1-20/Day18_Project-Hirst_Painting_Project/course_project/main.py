@@ -25,7 +25,7 @@ t.speed("fastest")
 t.setposition(-200, 0)
 
 #variable for our image 
-image = "image.jpg"
+img = "Day1-20\Day18_Project-Hirst_Painting_Project\course_project\image.jpg"
 
 ### --- FUNC --- ###
 
@@ -35,9 +35,8 @@ def get_colors():
         [type]: Returns a list of all the rgb colors in tuple format
     """
     rgb_colors = []
-    image = "image.jpg"
     #extract 30 occurances of color from the image 
-    colors = colorgram.extract(image, 30)
+    colors = colorgram.extract(img, 30)
     #loop through the colors and take the rgb values (and not the labels)
     for color in colors:
         r = color.rgb.r

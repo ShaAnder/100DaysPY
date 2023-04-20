@@ -17,7 +17,7 @@ s= S()
 s.setup(width=500,height=744)
 
 #we're gonna add a tad of flair to the race too by adding a bg
-background = 'racetrack.png'
+background = "Day1-20/Day19_Project-Turtle_Race_Game/course_project/racetrack.png"
 s.bgpic(background)
 
 #color, starting position and all turtles lists for our loops later
