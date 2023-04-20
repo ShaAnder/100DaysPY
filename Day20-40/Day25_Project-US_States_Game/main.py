@@ -66,6 +66,17 @@ while len(guessed_states) < 50:
         t.goto(int(state_data.x), int(state_data.y))
         #now write the state
         t.write(answer_state)
+    #we want to catch people putting in incorrect answers
+    else:
+        answer_wrong = screen.textinput(title=f"{len(guessed_states) }/50 Correct", prompt="That's not correct, do you want to continue").title()
+        if answer_wrong == "Y":
+            continue
+        else:
+            missing_states = [state for state in all_states if state not in guessed_states]
+            df = pandas.DataFrame(missing_states)
+            df.to_csv(f"{save_folder}/states_to_learn.csv")
+            break
+
 
 
 ### --- EXIT --- ###
