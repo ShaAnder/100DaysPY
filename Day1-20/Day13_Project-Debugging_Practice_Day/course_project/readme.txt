@@ -1,3 +1,7 @@
-### --- NOTE --- ###
+### --- PROJECT NAME / DESC --- ###
 
-No project today, just coursework on debugging
+### --- PARAMETERS --- ###
+
+### --- HOW IT WORKS --- ###
+
+### --- TO DO / FUTURE PLANS --- ### 

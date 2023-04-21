@@ -1,16 +1,7 @@
-Project 9 - Blind Auction
+### --- PROJECT NAME / DESC --- ###
 
-###--- PROJECT OBJECTIVES ---###
+### --- PARAMETERS --- ###
 
-To create a secret auction code using dictionaries and nested dictionaries.
+### --- HOW IT WORKS --- ###
 
-The progam should:
-
-> Allow users to enter name and price
-> Then add inputs to the dictionary as key:Value
-> Ask for any other bidders
-> if yes clear the screen for new bidders   
-    > if no find the highest bid in the dict and display the result as winner
-                    
-
-
+### --- TO DO / FUTURE PLANS --- ### 
