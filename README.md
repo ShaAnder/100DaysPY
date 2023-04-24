@@ -26,3 +26,5 @@ Main
     - Overengineered Project
       - ReadME / Files 
   - Table Of Contents
+
+I have also for the longer programs decided to add in a basic flow chart for visual clarity on how the program works.
