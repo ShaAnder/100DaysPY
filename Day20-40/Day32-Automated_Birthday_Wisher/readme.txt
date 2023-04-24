@@ -8,9 +8,10 @@ Automated_Birthday_Wisher, a simple piece of code designed to send a birthday gr
 - Be able to create a letter from the templates shown
 - Send an email to the recipient based on their email address in the birthdays.csv
 
-For testing purposes:
-
-All variables used here were stored in an env, to get the program to work you must supply a gmail address, and an app password for that account.
+- NOTE: Requires an env file with these details filled in:
+EMAIL="YOUR EMAIL"
+PW="YOUR APP PW"
+SEND_EMAIL="EMAIL SENDING TO"
 
 ### --- HOW IT WORKS --- ###
 

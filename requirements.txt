@@ -1,2 +1,5 @@
 dotenv
-nextcord
+requests
+twilio
+pandas
+colorgram.py
