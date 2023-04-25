@@ -1,0 +1,1 @@
+No project here friends, day 39 and 40 are part of a 2 part project. And as such the code is in day 40.
