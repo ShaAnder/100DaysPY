@@ -4,27 +4,24 @@
 
 Repository for the 100 days of python course.
 
-Originally I was going to use this repository as one element of my portfolio, to showcase the completed projects and as a stepping stone, to becoming a developer, I have however decided to expand on the scope of this repository to showcase the skills and creativity i've picked up along the way. 
+This is a repository showcasing the 100 days of python projects, all completed and able to work with the packages in requirements.txt or any env files. 
 
-The new goal of this repository is to creat a before / after image of each days project. Each course day folder will contain:<br>
-    ```
-    -> A Project folder
-    ```<br>
-    ```
-    -> An overengineered folder
-    ```
-    
-The aim is to complete the base project to the standard the course required, and then have a seperate folder for each day, to showcase how close to a working application i can bring each project, using only python and it's built in tools.
+Originally I had planned to make this a two fold repository, partially to show off the completed projects and secondarily to show off over engineered examples or close to app examples.
+However I have decided to move the overenginnered / app examples to different repositories, as some just wouldn't make good apps on their own and it would be better to give them a dedicated space.
 
 ## Navigation
 
 Main
-- 100 Days
-  - Day #
-    - Course Project
-      - ReadME / Files
-    - Overengineered Project
-      - ReadME / Files 
-  - Table Of Contents
+- 100 DaysPY
+  - DayX-X
+    - Day X
+      - Course_Project
+        - Files / readme
+  - .gitignore
+  - README.md <- You Are Here
+  - requirements.txt
+  
+## NOTES
 
-I have also for the longer programs decided to add in a basic flow chart for visual clarity on how the program works.
+- For longer projects I have decided to add a flowchart 
+- Days 41-44 are going to be HTML CSS AND JS, the projects that follow involve web dev and scraping so having an understanding of these languages is a must
