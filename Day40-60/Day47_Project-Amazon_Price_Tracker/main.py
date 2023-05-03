@@ -14,11 +14,13 @@ import time
 import os
 from dotenv import load_dotenv
 
-import smtplib
+#we import our sys and our email sender class (to save on writing tonnes of code!)
+import sys
+sys.path.append("G:/100DaysPY/toolkit")
+from email_sender import EmailSender
 
 
 ### --- SETUP AND VARS --- ###
-
 
 #setup our email_sender
 
@@ -69,24 +71,6 @@ SMTP = "smtp.gmail.com"
 SUBJECT = "NEW DEAL ALERT!"
 MESSAGE = f"The item you're currently tracking is now on sale!\nYour chosen price was ${target_price} and it's current price is ${current_price}\nCheck out the link below to purchase!\n{URL}"
 
-def send_email(SMTP, EMAIL, PW, EMAIL_TO, MESSAGE, SUBJECT):
-    server = SMTP
-    message = MESSAGE
-    subject = SUBJECT
-    email= EMAIL
-    pw = PW
-    email_to = EMAIL_TO
-    #now we connect to the smtp lib
-    connection = smtplib.SMTP(server)
-    connection.starttls()
-    connection.login(user=email,password=pw)
-    connection.sendmail(
-        from_addr=email, 
-        to_addrs=email_to, 
-        msg=f"{subject}\n\n{message}")
-    connection.close()
+#Now create our email sender 
+send_email = EmailSender(SMTP, OUR_EMAIL, OUR_PW, EMAIL_TO, MESSAGE, SUBJECT)
 
-if current_time == target_time and current_price < target_price:
-    send_email(SMTP, OUR_EMAIL, OUR_PW, EMAIL_TO, MESSAGE, SUBJECT)
-else:
-    print("Not on sale / not time")
