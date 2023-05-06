@@ -34,9 +34,9 @@ OUR_PW = os.getenv("PW")
 EMAIL_TO = os.getenv("SEND_EMAIL")
 
 #finally we want to setup our time and price variables
-# current_time = datetime.now().strftime("%H:%M:%S")
+current_time = datetime.now().strftime("%H:%M:%S")
 #testing
-current_time = "09:00:00"
+# current_time = "09:00:00"
 target_time = "09:00:00"
 
 target_price = 100
@@ -71,6 +71,8 @@ SMTP = "smtp.gmail.com"
 SUBJECT = "NEW DEAL ALERT!"
 MESSAGE = f"The item you're currently tracking is now on sale!\nYour chosen price was ${target_price} and it's current price is ${current_price}\nCheck out the link below to purchase!\n{URL}"
 
-#Now create our email sender 
-send_email = EmailSender(SMTP, OUR_EMAIL, OUR_PW, EMAIL_TO, MESSAGE, SUBJECT)
+if current_time == target_time and current_price < target_price:
+    time.sleep(1)
+    #Now create our email sender 
+    send_email = EmailSender(SMTP, OUR_EMAIL, OUR_PW, EMAIL_TO, MESSAGE, SUBJECT)
 
