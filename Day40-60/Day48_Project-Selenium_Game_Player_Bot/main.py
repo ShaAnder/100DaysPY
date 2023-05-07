@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
+from datetime import datetime, timedelta
 import time
 ### --- DRIVER SETUP --- ###
 
@@ -21,48 +22,85 @@ driver = webdriver.Chrome(options=options, executable_path=driver_path)
 #get the website
 driver.get("https://orteil.dashnet.org/cookieclicker/")
 
-#we have a bunch of popups and notifs that appear on the screen at the start we want to get rid of and because 
-#they popup on every launch we're writing this for loop here to get rid of them:
-popup_list = [
+###--FUNCTIONS---###
+ 
+def setup():
+    """Quick function to close all the popups set language ect"""
+    popup_list = [
     '/html/body/div[3]/div[2]/div[1]/div[2]/div[2]/button[1]/p',
     '//*[@id="langSelect-EN"]',
     '/html/body/div[3]/div/ins/img[3]',
     '/html/body/div[1]/div/a[1]',
     '//*[@id="note-1"]/div[1]'
              ]
-for item in popup_list:
-    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, item))).click()
-    time.sleep(1)
+    for item in popup_list:
+        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, item))).click()
+        time.sleep(1)
 
-
-### --- MAIN COMPONENTS --- ###
-
-#our game runtime
-TIME = 600
-
-#we want to find our cookie
-cookie = driver.find_element(By.XPATH, '//*[@id="bigCookie"]')
-#then make a list for all the store items
-store_items = [] 
-#now we loop through and find every store item
-for n in range(0, 18):
-    store_items.append(driver.find_element(By.ID, f'product{n}'))
-
-#the course wanted us to set a time loop so that it didn't run indefinitely
-end_time = time.time() + TIME
-#while our current time is less than our end time, play the game
-while time.time() < end_time:
-    #click the cookie
-    cookie.click()
-    #now let's iterate backwards through store items, it'll try and click on the item even if it doesn't show up and move backward through the list
-    for item in range(len(store_items) - 1, -1, -1): 
-        #try clicking, if can click if can't pass
+def click_cookie():
+    """Clicks the cookie"""
+    big_cookie = driver.find_element(By.XPATH, '//*[@id="bigCookie"]')
+    big_cookie.click()
+ 
+def purchase_upgrade():
+    """Purchases upgrades, when an upgrade is bought the next one along becomes the new 0"""
+    try:
+        upgrade = driver.find_element(By.ID, "upgrade0")
+        upgrade.click()
+    except:
+        pass
+ 
+def buy_item():
+    """Loops through the store list and tries to purchase most expensive item then the next most ect"""
+    for i in range(16, -1, -1):
         try:
-            store_items[item].get_attribute('onclick')
-            store_items[item].click()
-            
+            product = driver.find_element(By.ID, f"product{i}")
+            product.click()
         except:
             pass
  
-print("Time to sleep!")
-driver.close()
+def close_popup():
+    """Closes achievement popups
+    """
+    try:
+        popup_close = driver.find_element(By.XPATH, '//*[@id="notes"]/div[5]')
+        popup_close.click()
+    except:
+        pass
+ 
+def cookie_buff():
+    """Pressed the cookie buff popup, never seen it so this remains blank until i do"""
+    pass
+ 
+###---BUILD THE BOT---###
+ 
+#we want our loop counter here, as well as our time
+GAME_ON = True
+Loop = 0
+MINS = 10
+
+#wanna set the end time for the game
+end_time = datetime.now()+timedelta(minutes=MINS)
+
+#setup function to get to the game
+setup()
+time.sleep(1)
+
+#main loop, will click cookie and every x loops buy upgrades close achievements
+
+while GAME_ON == True:
+    click_cookie()
+    time.sleep(0.01)
+    Loop +=1
+    if Loop %100 == 0:
+        buy_item()
+        time.sleep(0.01)
+        purchase_upgrade()
+    if Loop %1000 == 0:
+        close_popup()
+        cookie_buff()
+    if end_time < datetime.now():
+        GAME_ON == False
+        print("Game Over")
+        time.sleep(1)
+        driver.close()        
