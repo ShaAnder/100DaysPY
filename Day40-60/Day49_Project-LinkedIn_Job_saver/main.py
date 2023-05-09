@@ -48,9 +48,19 @@ def login(U=USER, P=PW):
     time.sleep(1)
     sign_in = driver.find_element(By.XPATH, '//*[@id="organic-div"]/form/div[3]/button').click()
 
+def save_jobs():
+    time.sleep(1)
+    job_list = driver.find_elements(By.CLASS_NAME, "jobs-search-results__list-item")
+    for job in job_list[:5]:
+        print("List Item")
+        job.click()
+        item = '//*[@id="main"]/div/div[2]/div/div[2]/div[1]/div/div[1]/div/div[1]/div[1]/div[3]/div/button'
+        save = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, item))).click()
+
 ### --- MAINLOOP --- ###
 
 #webdriver will wait until, the element appears and becomes clickable
 sign_in_button = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/header/nav/div/a[2]"))).click()
 
 login(USER, PW)
+save_jobs()
