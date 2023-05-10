@@ -3,3 +3,7 @@ requests
 twilio
 pandas
 colorgram.py
+requests
+bs4
+selenium
+speedtest-cli

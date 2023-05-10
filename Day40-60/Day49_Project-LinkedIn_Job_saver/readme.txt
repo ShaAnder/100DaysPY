@@ -14,6 +14,10 @@ using the parameters set apply for jobs with the easy apply function (that only 
 The bot will take my login and mobile information saved in the env file to log into my account, it will then direct itself to the link 
 provided and start saving jobs for future viewing, to prevent it spamming an entire list i cliced the list to do only the first 5 jobs
 
+### --- REQUIREMENTS --- ###
+
+
+
 ### --- TO DO / FUTURE PLANS --- ### 
 
 This isn't really much of anything i can do for an application process, as a whole complex work with selenium can be great for 

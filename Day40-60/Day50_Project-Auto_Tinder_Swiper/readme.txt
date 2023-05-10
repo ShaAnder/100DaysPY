@@ -20,6 +20,13 @@ Due to how tinder has changed it's policies and how selenium has changed some th
 - cookies on tinder end
 - enabling discovery mode
 
+
+### --- REQUIREMENTS --- ###
+
+Requires an env file with the following information:
+LOGIN=""
+PW=""
+
 ### --- TO DO / FUTURE PLANS --- ### 
 
 No.
