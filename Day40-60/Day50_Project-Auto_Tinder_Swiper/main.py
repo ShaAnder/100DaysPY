@@ -72,24 +72,24 @@ def logins(l, p):
     WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="c-1703571637"]/main/div/div/div[1]/div/div/div[3]/span/div[2]/button/div[2]/div[2]/div/div'))).click()
 
 
-def navigate_tinder(): 
-    #instead of looking for a button we can use selenium keys to swipe left or right, on tinder pc you can swipe right with the left key (it's right manually, selenium is diff)
-    #create a swipe loop
-    loop = 0
-    while loop < 50:
-        #find the button if it's there click
-        try:
-            focus_profile = driver.find_element(By.CSS_SELECTOR, 'body')
-            time.sleep(2)
-            focus_profile.send_keys(Keys.LEFT)
-        #sometimes tinder hit's you with popups like add to homepage / gold ect we handle it here
-        except ElementClickInterceptedException:
-            time.sleep(1)
-            not_interested = driver.find_element(By.CLASS_NAME, "117p5q9z")
-            not_interested.click()
-            time.sleep(1)
-        loop +=1
+# def navigate_tinder(): 
+#     #instead of looking for a button we can use selenium keys to swipe left or right, on tinder pc you can swipe right with the left key (it's right manually, selenium is diff)
+#     #create a swipe loop
+#     loop = 0
+#     while loop < 50:
+#         #find the button if it's there click
+#         try:
+#             focus_profile = driver.find_element(By.CSS_SELECTOR, 'body')
+#             time.sleep(2)
+#             focus_profile.send_keys(Keys.LEFT)
+#         #sometimes tinder hit's you with popups like add to homepage / gold ect we handle it here
+#         except ElementClickInterceptedException:
+#             time.sleep(1)
+#             not_interested = driver.find_element(By.CLASS_NAME, "117p5q9z")
+#             not_interested.click()
+#             time.sleep(1)
+#         loop +=1
         
 logins(l=fb_login, p=fb_pw)
 handle_tinder_popups()
-navigate_tinder()
+# navigate_tinder()
