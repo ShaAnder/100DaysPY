@@ -17,4 +17,4 @@ Only real requirement is flask and jinja
 
 ### --- TO DO / FUTURE PLANS --- ### 
 
-Good training and experience for building websites with HTML and learning python backend tech
+Good training and experience for doing webdev backend with python, not a thing i'd persue but having the ability to do it is always good
