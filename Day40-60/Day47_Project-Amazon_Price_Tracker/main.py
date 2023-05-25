@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 #we import our sys and our email sender class (to save on writing tonnes of code!)
 import sys
 sys.path.append("G:/100DaysPY/toolkit")
-from email_sender import EmailSender
+from email_sender import SendMail
 
 
 ### --- SETUP AND VARS --- ###
@@ -74,5 +74,5 @@ MESSAGE = f"The item you're currently tracking is now on sale!\nYour chosen pric
 if current_time == target_time and current_price < target_price:
     time.sleep(1)
     #Now create our email sender 
-    send_email = EmailSender(SMTP, OUR_EMAIL, OUR_PW, EMAIL_TO, MESSAGE, SUBJECT)
+    send_email = SendMail(SMTP, OUR_EMAIL, OUR_PW, EMAIL_TO, MESSAGE, SUBJECT)
 

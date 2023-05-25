@@ -1,6 +1,6 @@
 import smtplib
 
-class EmailSender:
+class SendMail:
     """CLASS Specifically designed to send emails
     """
     def __init__(self, SMTP, EMAIL, PW, EMAIL_TO, MESSAGE, SUBJECT) -> None:
