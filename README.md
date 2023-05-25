@@ -32,6 +32,10 @@ the [Refinded Github](https://github.com/refined-github/refined-github) extensio
 - Days 41-44 are going to be HTML CSS AND JS, the projects that follow involve web dev and scraping so having an understanding of these languages is a must
 
 - For days 54 onward we will be moving to a web dev environment with flask, django is also being learnt in a seperate course we will revisit a lot of projects
+<<<<<<< HEAD
 from previous days and look to rebuild them with django in mind
+=======
+from previous days and look to rebuild them with django in mind.
+>>>>>>> 208ef139a9f4b9e29030fe1317c46ffbff969d4d
 
 - The Final 19 Days of this course are all professional portfolio projects, designed from the ground up to be my step into the working world. As such I will not include these in this repository, but their own one. There will be links in each folder to navigate to said projects.
