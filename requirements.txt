@@ -7,3 +7,5 @@ requests
 bs4
 selenium
 speedtest-cli
+flask
+Flask-WTF

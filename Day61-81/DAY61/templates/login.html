@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+		<!-- we want to use a dynamic url here so if page changes it won't break code-->
+		<form method="POST" action="{{ url_for('login') }}">
+			<!-- 
+			WE add in our jinja python code here, we tell it we want the csrf token and to 
+			create fields for email and pass from flask-wtf quickstart
+			-->
+			<h1>Login</h1>
+			{{ form.csrf_token }}
+			<p>
+				{{ form.email.label }} <br> {{ form.email(size=30) }} 
+				{% for err in form.email.errors %}
+				<span style="color:red">{{ err }}</span>
+				{% endfor %}
+			</p>
+			<p>
+				{{ form.password.label }} <br> {{ form.password(size=30) }} 
+				{% for err in form.password.errors %}
+				<span style="color:red">{{ err }}</span>
+				{% endfor %}
+			</p>
+			{{ form.submit }}
+		</form>
+
+{% endblock %}	
