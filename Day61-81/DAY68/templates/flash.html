@@ -1,0 +1,10 @@
+<!-- this is a small addition we can add to flash messages at user for feedback -->
+<div id="flash_messages">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <p class="{{ category }}">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
