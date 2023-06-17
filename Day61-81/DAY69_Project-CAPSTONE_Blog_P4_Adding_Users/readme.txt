@@ -16,7 +16,6 @@ comment posting and user encryption
 Knowledge of flask & Jinja Restful practices, sql and authentication
 
 
-
 ### --- TO DO / FUTURE PLANS --- ### 
 
 This is the final step in the Blog project, with this we now have the full knowledge to create a website which will be covered
